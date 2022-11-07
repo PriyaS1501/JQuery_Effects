@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery Effects/ Events</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>jQuery Effects/ Events</h1>
+
+        <p id="para1">This is paragraph 1</p>
+        <p id="para2">This is paragraph 2</p>
+        <p id="para3">This is paragraph 3</p>
+        <p id="para4">This is paragraph 4</p>
+        <hr>
+        <div class="div1">This is Div1</div>
+        <div class="div2">This is Div2</div>
+        <div class="div3">This is Div3</div>
+        <hr>
+        <p id="main">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo blanditiis, laboriosam culpa ducimus
+            corporis
+            autem aliquam odio fugiat voluptatum. Quis voluptatem, quas, aperiam quibusdam accusantium nisi
+            necessitatibus rerum ab, dolorum facere sit ipsum vitae ad aspernatur voluptates tempore ut repellendus?
+            Aliquam reiciendis culpa nulla praesentium distinctio id. Nihil, officiis voluptates!</p>
+        <hr>
+        <button id="btnshow">Show</button>
+        <button id="btnhide">Hide</button>
+        <button id="btntoggle">Toggle</button>
+        <button id="btnremove">Remove</button>
+        <hr>
+        <button id="btnFadeIn"> FadeIn</button>
+        <button id="btnFadeOut"> FadeOut</button>
+        <button id="btnSlideDown">SlideDown</button>
+        <button id="btnSlideUp"> SlideUp</button>
+        <button id="btnSlideToggle"> SlideToggle</button>
+
+
+    </div>
+    <script src='scripts/jquery-3.6.1.js'></script>
+    <script>
+        // we need to make sure that our JS code does not run until the document is ready 
+        $(document).ready(function () {
+            console.log("Document is ready...")
+
+            // hide the content using button click 
+            $('#btnhide').click(function () {
+                $('p').hide(1000, function () {
+                    console.log("paragraphs are hidden...")
+                })
+            })
+
+            // show the hidden content using button click
+            $('#btnshow').click(function () {
+                $('p').show(2000, function () {
+                    console.log("paragraphs are shown...")
+                })
+            })
+
+            //toggle is getting to toggle between hide and show
+            $('#btntoggle').click(function () {
+                $('p').toggle(1500)
+            })
+
+            //remove the content using button click
+            $('#btnremove').click(function () {
+                $('p').remove()
+            })
+
+            $('.div1').css({ "color": "white", "background-color": "black" })
+
+            // div fadeIn
+            /*$('#btnFadeIn').click(function () {
+                $('.div1').fadeIn(1000, function(){
+                    console.log("div1 is fadein...")
+                })
+            // div FadeOut    
+            })
+            $('#btnFadeOut').click(function () {
+                $('.div1').fadeOut(1500, function(){
+                    console.log("div1 is fadeout...")
+                })
+            })*/
+
+            // paragraph fadeOut
+            $('#btnFadeOut').click(function () {
+                $('#para1').fadeOut(1500)
+                $('#para2').fadeOut(2000)
+                $('#para3').fadeOut(2500)
+            })
+
+            //paragraph FadeIn
+            $('#btnFadeIn').click(function () {
+                $('#para1').fadeIn(1500)
+                $('#para2').fadeIn(2000)
+                $('#para3').fadeIn(2500)
+            })
+
+            //paragraph slideup
+            $('#btnSlideUp').click(function () {
+                $('#main').slideUp(1000)
+            })
+
+            $('#btnSlideDown').click(function () {
+                $('#main').slideDown(1000)
+            })
+
+            $('#btnSlideToggle').click(function () {
+                $('#main').slideToggle(1000)
+            })
+
+        })
+
+    </script>
+
+</body>
+
+</html>
